@@ -3,113 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A simple, free HTML template website.">
-    <title>My Fsite</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px 0;
-            text-align: center;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #333;
-        }
-
-        nav a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            text-align: center;
-        }
-
-        nav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        section {
-            padding: 20px;
-            margin: 20px;
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        h1 {
-            color: #333;
-        }
-        
-        .content {
-            text-align: center;
-            margin-top: 40px;
-        }
-    </style>
+    <title>Star Trek Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<header>
-    <h1>Welcome to My Free Website</h1>
-    <p>Building your presence on the web, for free!</p>
-</header>
-
-<nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Contact</a>
-</nav>
-
-<section>
-    <div class="container">
-        <h2>About Us</h2>
-        <p>Welcome to our website. We are passionate about providing simple and free website templates that anyone can use. This website is a great place to start if you're just learning HTML or looking for a basic website structure.</p>
+    <div class="login-container">
+        <div class="login-form">
+            <h1>Starfleet Login</h1>
+            <input type="text" id="username" placeholder="Username" />
+            <input type="password" id="password" placeholder="Password" />
+            <button id="login-btn" onclick="startLoading()">Login</button>
+        </div>
     </div>
-</section>
 
-<section>
-    <div class="container">
-        <h2>Our Services</h2>
-        <ul>
-            <li>Website Design</li>
-            <li>HTML & CSS Tutorials</li>
-            <li>Free Templates</li>
-        </ul>
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader">
+            <div class="progress-bar"></div>
+        </div>
+        <h2>Initiating Warp Drive...</h2>
     </div>
-</section>
 
-<section class="content">
-    <h2>Get Started Today!</h2>
-    <p>Feel free to use this template for your own projects. You can edit the HTML and CSS to customize it according to your needs.</p>
-</section>
-
-<footer>
-    <p>&copy; 2025 My Free Website. All rights reserved.</p>
-</footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
