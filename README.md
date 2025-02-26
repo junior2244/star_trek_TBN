@@ -1,4 +1,0 @@
-LCARS
-=====
-
-LCARS style interface.
