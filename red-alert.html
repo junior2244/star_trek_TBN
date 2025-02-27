@@ -83,6 +83,25 @@
 
 			</div>
 			<footer>
+				<audio id="bg-music" src="sounds/red_alert.mp3" loop></audio>
+
+<script>
+  document.addEventListener("click", function() {
+    let sound = document.getElementById("bg-music");
+
+    if (!sound.paused) return; // If already playing, do nothing
+
+    let playPromise = sound.play();
+
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        console.log("✅ Background music started!");
+      }).catch(error => {
+        console.log("❌ Error playing sound:", error);
+      });
+    }
+  }, { once: true }); // Ensures it only runs once
+</script>
 				<div class="footer-inside">
 					<div class="footer-text">						
 						
