@@ -101,7 +101,16 @@
 		<div class="panel-3">03<span class="hop">-111968</span></div>
   <div class="sidebar-buttons">
 
-    <a href="Tranings.html">Tranings/BST</a>
+<button href="Tranings.html" onclick="playSound()">Click Me</button>
+<audio id="sound" src="click.mp3"></audio>
+
+<script>
+  function playSound() {
+    document.getElementById("sound").play();
+  }
+</script>
+
+	  
     <a href="url">Main Hub</a>
   </div>
 <div class="panel-4">04<span class="hop">-041969</span></div>
