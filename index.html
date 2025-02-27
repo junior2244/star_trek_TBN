@@ -120,19 +120,9 @@
   }, { once: true }); // Ensures it only runs once
 </script>
 
-<button onclick="playSound()">Play Sound</button>
-
-<audio id="sound" src="sounds/panel_beep_07.ogg" preload="auto"></audio>
-
-<script>
-  function playSound() {
-    let sound = document.getElementById("sound");
-    sound.currentTime = 0; // Reset sound to start
-    sound.play()
-      .then(() => console.log("✅ Sound played!"))
-      .catch(error => console.log("❌ Error playing sound:", error));
-  }
-</script>
+<a href="">Main Hub</a> 
+<a href="">Roster</a> 	
+<a href="">Security Console</a> 
 
   </div>
 <div class="panel-4">04<span class="hop">-041969</span></div>
