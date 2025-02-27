@@ -100,28 +100,26 @@
 					<div>
 		<div class="panel-3">03<span class="hop">-111968</span></div>
   <div class="sidebar-buttons">
-
-<a href="#" onclick="playSound(); return false;">
-  <button>Play Sound</button>
-</a>
-
-<audio id="sound" src="sounds/panel_beep_07.ogg" preload="auto"></audio>
+<audio id="bg-music" src="sounds/Star_Trek_Nemesis-_Full_Version_of_Blue_Skies_[_YouConvert.net_].mp3" loop></audio>
 
 <script>
-  function playSound() {
-    let sound = document.getElementById("sound");
-    sound.currentTime = 0; // Reset to start
-    sound.play();
-  }
+  document.addEventListener("click", function() {
+    let sound = document.getElementById("bg-music");
+
+    if (!sound.paused) return; // If already playing, do nothing
+
+    let playPromise = sound.play();
+
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        console.log("✅ Background music started!");
+      }).catch(error => {
+        console.log("❌ Error playing sound:", error);
+      });
+    }
+  }, { once: true }); // Ensures it only runs once
 </script>
 
-
-
-	  
-  <a href="Tranings.html">
-  <audio src="sounds/panel_beep_07.ogg" autoplay></audio>
-  Main Hub
-</a>
 
   </div>
 <div class="panel-4">04<span class="hop">-041969</span></div>
@@ -175,7 +173,7 @@
 	<div class="headtrim"> </div>
 	<div class="baseboard"> </div>
 
-	<audio src="sounds/Star_Trek_Nemesis-_Full_Version_of_Blue_Skies_[_YouConvert.net_].mp3" autoplay loop></audio>
+	
 
 </body>
 </html>
