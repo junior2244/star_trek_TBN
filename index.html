@@ -101,6 +101,19 @@
 		<div class="panel-3">03<span class="hop">-111968</span></div>
   <div class="sidebar-buttons">
 
+<a href="#" onclick="playSound(); return false;">
+  <button>Play Sound</button>
+</a>
+
+<audio id="sound" src="sounds/panel_beep_07.mp3" preload="auto"></audio>
+
+<script>
+  function playSound() {
+    let sound = document.getElementById("sound");
+    sound.currentTime = 0; // Reset to start
+    sound.play();
+  }
+</script>
 
 
 
