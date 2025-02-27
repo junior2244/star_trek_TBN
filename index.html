@@ -101,14 +101,21 @@
 		<div class="panel-3">03<span class="hop">-111968</span></div>
   <div class="sidebar-buttons">
 
-<button href="Tranings.html" onclick="playSound()">Click Me</button>
-<audio id="sounds" src="panel_beep_07"></audio>
+<button onclick="playSoundAndNavigate()">Click Me</button>
+<audio id="sounds" src="sounds/panel_beep_07.mp3" preload="auto"></audio>
 
 <script>
-  function playSound() {
-    document.getElementById("sound").play();
+  function playSoundAndNavigate() {
+    let sound = document.getElementById("sounds");
+    sound.currentTime = 0; // Reset to start
+    sound.play(); // Play the sound
+
+    setTimeout(() => {
+      window.location.href = "Trainings.html"; // Navigate after sound plays
+    }, 300); // Adjust delay if needed
   }
 </script>
+
 
 	  
     <a href="url">Main Hub</a>
