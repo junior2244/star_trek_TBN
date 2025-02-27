@@ -122,6 +122,48 @@
   }, { once: true }); // Ensures it only runs once
 </script>
 
+<!-- Add this right after the <body> tag -->
+<div id="loginOverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; display: flex; justify-content: center; align-items: center;">
+  <div style="background: #000; border: 2px solid #f90; padding: 20px; color: #f90; text-align: center;">
+    <h2>LCARS SECURITY LOGIN</h2>
+    <input type="password" id="securityCode" placeholder="Enter Security Code" style="background: #000; border: 1px solid #f90; color: #f90; padding: 5px; margin: 10px;">
+    <button onclick="checkPassword()" style="background: #f90; color: #000; border: none; padding: 5px 15px; cursor: pointer;">ACCESS</button>
+  </div>
+</div>
+
+<!-- Add this script before the closing </body> tag -->
+<script>
+function checkPassword() {
+    const correctPassword = "47988"; // LCARS number shown in the banner
+    const userInput = document.getElementById("securityCode").value;
+    
+    if (userInput === correctPassword) {
+        document.getElementById("loginOverlay").style.display = "none";
+        // Play the computer acknowledgment sound
+        const audio = new Audio("sounds/computerbeep_19.mp3");
+        audio.play();
+    } else {
+        alert("ACCESS DENIED - Invalid Security Code");
+        // Optional: Play denial sound
+        const audio = new Audio("sounds/deny_1.mp3");
+        audio.play();
+    }
+}
+
+// Prevent access to main content before login
+document.addEventListener("DOMContentLoaded", function() {
+    if (!sessionStorage.getItem("loggedIn")) {
+        document.getElementById("loginOverlay").style.display = "flex";
+    }
+});
+
+// Prevent right-click
+document.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+});
+</script>
+
+	  
 <a href="">Main Hub</a> 
 <a href="roster.html">Roster</a> 	
 <a href="">Security Console</a> 
